@@ -7,12 +7,12 @@ const dynamoDb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
 export const main = Util.handler(async (event) => {
   const data = JSON.parse(event.body || "{}");
-
+  const userId = event.requestContext.authorizer?.iam.cognitoIdentity.identityId;
   const params = {
     TableName: Resource.Notes.name,
     Key: {
       // The attributes of the item to be created
-      userId: "123", // The id of the author
+      userId, // The id of the author
       noteId: event?.pathParameters?.id, // The id of the note from the path
     },
     // 'UpdateExpression' defines the attributes to be updated

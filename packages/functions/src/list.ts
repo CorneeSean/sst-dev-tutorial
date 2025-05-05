@@ -6,6 +6,7 @@ import { QueryCommand, DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 const dynamoDb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
 export const main = Util.handler(async (event) => {
+  const userId = event.requestContext.authorizer?.iam.cognitoIdentity.identityId;
   const params = {
     TableName: Resource.Notes.name,
     // 'KeyConditionExpression' defines the condition for the query
@@ -15,7 +16,7 @@ export const main = Util.handler(async (event) => {
     // 'ExpressionAttributeValues' defines the value in the condition
     // - ':userId': defines 'userId' to be the id of the author
     ExpressionAttributeValues: {
-      ":userId": "123",
+      ":userId": userId,
     },
   };
 

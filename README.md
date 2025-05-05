@@ -1,34 +1,10 @@
-# Monorepo Template
+# SST Dev Guide/Tutorial Excercise repository
 
-A template to create a monorepo SST v3 project. [Learn more](https://sst.dev/docs/set-up-a-monorepo).
-
-## Get started
-
-1. Use this template to [create your own repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-
-2. Clone the new repo.
-
-   ```bash
-   git clone <REPO_URL> MY_APP
-   cd MY_APP
-   ```
-
-3. Rename the files in the project to the name of your app.
-
-   ```bash
-   npx replace-in-file '/monorepo-template/g' 'MY_APP' '**/*.*' --verbose
-   ```
-
-4. Deploy!
-
-   ```bash
-   npm install
-   npx sst deploy
-   ```
-
-5. Optionally, enable [_git push to deploy_](https://sst.dev/docs/console/#autodeploy).
+This is a repository dedicated for learning Serverless Stack (SST) tool with AWS.
+It strictly follows the official guide from [https://guide.sst.dev/](https://guide.sst.dev/)
 
 ## Usage
+***NOTE: The following section has been copied from the source template repository***
 
 This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/workspaces). It has 3 packages to start with and you can add more it.
 
